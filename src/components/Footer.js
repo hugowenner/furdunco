@@ -6,7 +6,8 @@ import { footerData } from '../data';
 
 export default function Footer() {
   return (
-    <footer className="bg-brown-800 text-white py-12">
+    // ID ADICIONADO AQUI
+    <footer id="contato" className="bg-brown-800 text-white py-12">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-6">
           <div className="text-2xl font-bold bg-gradient-to-r from-brown-400 to-brown-500 bg-clip-text text-transparent mb-4">

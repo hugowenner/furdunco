@@ -8,7 +8,9 @@ export const navigationLinks = [
   { id: 'historia', label: 'História' },
   { id: 'servicos', label: 'Serviços' },
   { id: 'nichos', label: 'Alugue um Nicho' },
-  { id: 'inscricao', label: 'Inscrição' }
+  { id: 'inscricao', label: 'Inscrição' },
+  { id: 'instagram', label: 'Instagram' },
+  { id: 'contato', label: 'Contato' }
 ];
 
 export const heroData = {
