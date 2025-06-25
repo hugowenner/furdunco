@@ -2,23 +2,29 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Garante que o Tailwind analise todos os seus arquivos de componentes
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         brown: {
-          50:  '#f7f2ef', // Um bege muito claro, quase branco
-          100: '#e8e0d9', // Bege claro para fundos de seção
-          200: '#d9cebf', // Bege um pouco mais escuro
-          300: '#c2b09e', // Tom de areia/cáqui
-          400: '#a58d76', // Marrom médio claro, bom para ícones ou textos secundários
-          500: '#8c715A', // Marrom principal, equilibrado
-          600: '#755b47', // Marrom mais escuro e rico
-          700: '#5e4838', // Marrom escuro para textos principais e títulos
-          800: '#4a382b', // Marrom muito escuro, para rodapés
-          900: '#3c2e22', // Marrom quase preto
+          50:  '#f7f2ef',
+          100: '#e8e0d9',
+          200: '#d9cebf',
+          300: '#c2b09e',
+          400: '#a58d76',
+          500: '#8c715A',
+          600: '#755b47',
+          700: '#5e4838',
+          800: '#4a382b',
+          900: '#3c2e22',
         },
+      }, // <-- UMA VÍRGULA É ADICIONADA AQUI PARA SEPARAR
+
+      // A NOVA SEÇÃO DE FONTES É ADICIONADA AQUI
+      fontFamily: {
+        'slab': ['"Roboto Slab"', 'serif'],
+        'lora': ['"Lora"', 'serif'],
       },
     },
   },

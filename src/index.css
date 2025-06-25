@@ -1,3 +1,24 @@
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  position: relative;
+  background-color: #f7f2ef; /* Adicione esta linha (cor brown-50) */
+}
+
+/* Camada de textura para o fundo */
+body::before {
+  content: "";
+  background-image: url('./fundo003.jpg');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  z-index: -1;
+}

@@ -26,8 +26,6 @@ export default function HomePage() {
   };
   
   useEffect(() => {
-    // ALTERAÇÃO AQUI: A lista de seções agora é criada dinamicamente
-    // a partir dos seus links, garantindo que 'contato' e outros sejam incluídos.
     const sections = ['hero', ...navigationLinks.map(link => link.id)];
     
     const handleScroll = () => {
@@ -42,14 +40,14 @@ export default function HomePage() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // A dependência vazia [] está correta aqui
+  }, []);
 
   return (
-    <div className="min-h-screen bg-brown-50">
+    <div className="min-h-screen">
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
       <main>
         <Hero />
-        <div className="h-12 md:h-20" />
+        {/* O DIV DE ESPAÇAMENTO FOI REMOVIDO DESTA LINHA */}
         <Historia />
         <Servicos />
         <Nichos />

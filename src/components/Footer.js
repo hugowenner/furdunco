@@ -6,20 +6,25 @@ import { footerData } from '../data';
 
 export default function Footer() {
   return (
-    // ID ADICIONADO AQUI
-    <footer id="contato" className="bg-brown-800 text-white py-12">
+    <footer id="contato" className="bg-gradient-to-t from-brown-900 to-brown-800 text-white py-12">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-6">
-          <div className="text-2xl font-bold bg-gradient-to-r from-brown-400 to-brown-500 bg-clip-text text-transparent mb-4">
+          
+          {/* Nome "Furdunço" alterado para branco sólido */}
+          <div className="text-2xl font-bold text-white mb-4 font-slab">
             {footerData.brandName}
           </div>
-          <div className="flex items-center justify-center text-brown-300 mb-4">
+
+          {/* Endereço alterado para branco com 80% de opacidade */}
+          <div className="flex items-center justify-center text-white/80 mb-4 font-lora">
             <MapPin className="w-4 h-4 mr-2" />
             <span>{footerData.address}</span>
           </div>
         </div>
+
         <div className="border-t border-brown-700 pt-6">
-          <p className="text-brown-400 text-sm">
+          {/* Copyright alterado para branco com 60% de opacidade */}
+          <p className="text-white/60 text-sm font-lora">
             {footerData.copyright}
           </p>
         </div>
