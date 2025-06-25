@@ -55,6 +55,8 @@ export const servicosData = {
   ]
 };
 
+// Em src/data.js
+
 export const nichosData = {
   title: "Alugue um Nicho",
   items: [
@@ -63,35 +65,40 @@ export const nichosData = {
       valor: "R$180",
       largura: "60 cm",
       altura: "35 cm",
-      profundidade: "50 cm"
+      profundidade: "50 cm",
+      imgSrc: "/assets/nicho1.png" // <-- CORRIGIDO
     },
     {
       numero: "02",
       valor: "R$280",
       largura: "60 cm",
       altura: "70 cm",
-      profundidade: "50 cm"
+      profundidade: "50 cm",
+      imgSrc: "/assets/nicho2.png" // <-- CORRIGIDO
     },
     {
       numero: "03",
       valor: "R$200",
       largura: "60 cm",
       altura: "90 cm",
-      profundidade: "50 cm"
+      profundidade: "50 cm",
+      imgSrc: "/assets/nicho3.png" // <-- CORRIGIDO
     },
     {
       numero: "04",
       valor: "R$320",
       largura: "60 cm",
       altura: "130 cm",
-      profundidade: "50 cm"
+      profundidade: "50 cm",
+      imgSrc: "/assets/nicho4.png" // <-- CORRIGIDO
     },
     {
       numero: "05",
       valor: "R$380",
       largura: "125 cm",
       altura: "90 cm",
-      profundidade: "50 cm"
+      profundidade: "50 cm",
+      imgSrc: "/assets/nicho5.png" // <-- CORRIGIDO
     }
   ],
   rentalInfo: {
