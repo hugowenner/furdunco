@@ -8,25 +8,28 @@ export default function Nichos() {
   return (
     <section id="nichos" className="py-20 relative overflow-hidden">
       
-      {/* 1. Fundo da seção alterado para o padrão escuro */}
+      {/* Fundo da seção (mantido como está) */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('/assets/furduncio.avif')` }}
       ></div>
       <div className="absolute inset-0 bg-brown-800 opacity-60"></div>
 
-      {/* Conteúdo principal */}
+      {/* Conteúdo principal da seção */}
       <div className="container mx-auto px-4 relative z-10">
-        {/* Título principal alterado para branco e com a nova fonte */}
-        <h2 className="text-4xl font-bold text-center mb-16 text-white font-slab">{nichosData.title}</h2>
+        
+        {/* Título principal com fundo branco, sombra e centralizado */}
+        <div className="max-w-fit mx-auto bg-white/80 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-2xl mb-16">
+          <h2 className="text-4xl font-bold text-center text-brown-800 font-slab">
+            {nichosData.title}
+          </h2>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
           {nichosData.items.map((nicho, index) => (
-            // 2. Card redesenhado com fundo branco para maior contraste
             <div key={index} className="bg-white rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
               
-              {/* ATUALIZAÇÃO: Altura do container da imagem diminuída para h-24 */}
-              <div className="w-full h-128 overflow-hidden"> 
+              <div className="w-full h-24 overflow-hidden">
                 <img 
                   src={nicho.imgSrc} 
                   alt={`Imagem do Nicho ${nicho.numero}`} 
@@ -39,11 +42,9 @@ export default function Nichos() {
                   <div className="inline-block bg-gradient-to-r from-brown-500 to-brown-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3 font-slab">
                     Nicho {nicho.numero}
                   </div>
-                  {/* Preço com a nova fonte */}
                   <div className="text-3xl font-bold text-brown-800 mb-2 font-slab">{nicho.valor}</div>
                 </div>
                 
-                {/* Informações com a nova fonte */}
                 <div className="space-y-3 font-lora">
                   <div className="flex items-center text-sm text-brown-700">
                     <Ruler className="w-4 h-4 mr-2 text-brown-600" />
