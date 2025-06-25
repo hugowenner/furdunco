@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// GARANTA QUE 'export default' ESTÁ AQUI
 export default function InscricaoPage() {
   const [formData, setFormData] = useState({
     nome: '', telefone: '', cpf: '', endereco: '', tipo_produto: '', nome_loja: ''
@@ -23,22 +22,18 @@ export default function InscricaoPage() {
     setMensagem('');
 
     try {
-      // Lembre-se de substituir pela URL do seu site quando for para produção
-      const response = await fetch('http://localhost:3000/backend/processa-inscricao.php', {
+      const response = await fetch('/processa-inscricao.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const result = await response.json();
-
       if (result.status === 'sucesso') {
         setStatus('sucesso');
       } else {
         setStatus('erro');
       }
       setMensagem(result.mensagem || 'Ocorreu um erro.');
-
     } catch (error) {
       setStatus('erro');
       setMensagem('Falha na comunicação com o servidor.');
@@ -50,7 +45,11 @@ export default function InscricaoPage() {
         <div className="min-h-screen bg-brown-50 flex flex-col">
             <header className="bg-white shadow-md">
                 <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">Furdunço</Link>
+                    {/* LOGO E NOME AQUI TAMBÉM */}
+                    <Link to="/" className="flex items-center">
+                      <img src="/assets/logo.png" alt="Logo Furdunço" className="h-8 mr-2" />
+                      <span className="text-2xl font-bold bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">Furdunço</span>
+                    </Link>
                     <Link to="/" className="font-medium text-gray-700 hover:text-brown-600">&larr; Voltar para a Home</Link>
                 </nav>
             </header>
@@ -68,8 +67,23 @@ export default function InscricaoPage() {
     <div className="min-h-screen bg-brown-50">
       <header className="bg-white shadow-md">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">Furdunço</Link>
-            <Link to="/" className="font-medium text-gray-700 hover:text-brown-600">&larr; Voltar para a Home</Link>
+            
+            {/* INÍCIO DA ALTERAÇÃO */}
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/assets/logo.png" 
+                alt="Logo Furdunço" 
+                className="h-8 mr-2" 
+              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-brown-600 to-brown-800 bg-clip-text text-transparent">
+                Furdunço
+              </span>
+            </Link>
+            {/* FIM DA ALTERAÇÃO */}
+
+            <Link to="/" className="font-medium text-gray-700 hover:text-brown-600">
+              &larr; Voltar para a Home
+            </Link>
         </nav>
       </header>
       
@@ -81,7 +95,6 @@ export default function InscricaoPage() {
                   <p className="text-lg text-brown-600 mb-12">Todos os campos são obrigatórios.</p>
                 </div>
                 <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-8 bg-white rounded-2xl shadow-lg">
-                  {/* Campos do formulário... */}
                   <div className="mb-4"><input type="text" name="nome" placeholder="Nome completo" value={formData.nome} onChange={handleChange} required className="w-full p-3 rounded-lg border border-brown-200 focus:outline-none focus:ring-2 focus:ring-brown-500" /></div>
                   <div className="mb-4"><input type="tel" name="telefone" placeholder="Telefone com DDD" value={formData.telefone} onChange={handleChange} required className="w-full p-3 rounded-lg border border-brown-200 focus:outline-none focus:ring-2 focus:ring-brown-500" /></div>
                   <div className="mb-4"><input type="text" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} required className="w-full p-3 rounded-lg border border-brown-200 focus:outline-none focus:ring-2 focus:ring-brown-500" /></div>

@@ -4,13 +4,10 @@ import React from 'react';
 import { Instagram } from 'lucide-react';
 
 const instagramPosts = [
-  { img: '/assets/instagram/post1.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-  { img: '/assets/instagram/post2.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-  { img: '/assets/instagram/post3.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-  { img: '/assets/instagram/post4.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-  { img: '/assets/instagram/post5.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-  { img: '/assets/instagram/post6.jpg', url: 'https://www.instagram.com/p/SEU_CODIGO_DE_POST/' },
-];
+  { img: '/assets/post1.jpg', url: 'https://www.instagram.com/p/C6grQ2LxiqN/' },
+  { img: '/assets/post2.jpg', url: 'https://www.instagram.com/p/Cz89tp-qvGC/?igsh=dXVyZTFpc29pcHRo' },
+  { img: '/assets/post3.jpg', url: 'https://www.instagram.com/p/C8sdV12x47j/?igsh=MWRwd3BwZzlyN2U1eg==' },
+  ];
 
 export default function InstagramSection() {
   return (
@@ -35,7 +32,7 @@ export default function InstagramSection() {
         </div>
 
         <a 
-          href="https://www.instagram.com/furdunco.loja/"
+          href="https://www.instagram.com/furdunco.colaborativa?igsh=emxlOG1uamtqaHI5"
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-gradient-to-r from-brown-500 to-brown-600 text-white font-bold py-4 px-12 rounded-full text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center mx-auto"
