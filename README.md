@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+🚀 Sobre o Projeto
+O site foi desenvolvido para ser uma vitrine digital moderna e atraente, apresentando a história da loja, os serviços oferecidos aos microempreendedores e as informações para que novos produtores possam alugar seus próprios espaços (nichos) para expor e vender suas criações.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O projeto foi construído com foco em uma experiência de usuário fluida, um design que reflete a identidade visual da marca (tons de marrom, rusticidade e energia) e total responsividade para acesso em qualquer dispositivo.
 
-## Available Scripts
+✨ Funcionalidades Principais
+Navegação Fixa e Interativa: Um cabeçalho que permanece no topo da tela e destaca a seção ativa conforme o usuário navega pelo site.
+Scroll Suave: Transições suaves ao clicar nos links do menu para navegar entre as seções.
+Seções com Fundo Visual: Uso de imagens de fundo com sobreposições (overlays) e efeitos de desfoque (backdrop-blur) para criar profundidade e um visual sofisticado.
+Apresentação de Serviços: Cards informativos que detalham os benefícios de fazer parte da loja colaborativa.
+Tabela de Nichos: Exibição clara e organizada das opções de nichos para aluguel, com dimensões e valores.
+Design Responsivo: A interface se adapta perfeitamente a diferentes tamanhos de tela, de celulares a desktops.
+🛠️ Tecnologias Utilizadas
+React.js: Biblioteca principal para a construção da interface de usuário.
+Tailwind CSS: Framework de estilização utility-first para criar o design de forma rápida e customizável.
+Lucide React: Biblioteca de ícones open-source e de alta qualidade.
+Vite: Ambiente de desenvolvimento rápido para projetos web modernos.
+👨‍💻 Contato | Desenvolvido por
+Hugo Wenner
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Whatsapp: +55 (31) 97183-6063
