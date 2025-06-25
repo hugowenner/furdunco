@@ -1,6 +1,7 @@
 // src/data.js
 
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { ExternalLink, MapPin, Clock, DollarSign, Ruler, Users, ShoppingBag, BookOpen, Zap } from 'lucide-react';
 
 export const navigationLinks = [
