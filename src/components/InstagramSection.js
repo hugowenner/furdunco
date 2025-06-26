@@ -7,6 +7,9 @@ const instagramPosts = [
   { img: '/assets/post1.jpg', url: 'https://www.instagram.com/p/C6grQ2LxiqN/' },
   { img: '/assets/post2.jpg', url: 'https://www.instagram.com/p/Cz89tp-qvGC/?igsh=dXVyZTFpc29pcHRo' },
   { img: '/assets/post3.jpg', url: 'https://www.instagram.com/p/C8sdV12x47j/?igsh=MWRwd3BwZzlyN2U1eg==' },
+  { img: '/assets/post4.jpeg', url: 'https://www.instagram.com/p/C7NG3Iuvard/?igsh=aW1hejg0dDkwYTBx' },
+  { img: '/assets/post5.jpeg', url: 'https://www.instagram.com/p/C61D7VxP2nK/?igsh=MXh5dmxwZGNmOXg3aQ==' },
+  { img: '/assets/post6.jpeg', url: 'https://www.instagram.com/p/C6ys1ECthhY/?igsh=dnpsNXJpMmJyNng0' },
   ];
 
 export default function InstagramSection() {
