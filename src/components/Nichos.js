@@ -29,7 +29,7 @@ export default function Nichos() {
           {nichosData.items.map((nicho, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
               
-              <div className="w-full h-24 overflow-hidden">
+              <div className="w-full h-64 overflow-hidden">
                 <img 
                   src={nicho.imgSrc} 
                   alt={`Imagem do Nicho ${nicho.numero}`} 

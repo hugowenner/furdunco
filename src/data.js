@@ -68,7 +68,7 @@ export const nichosData = {
       largura: "60 cm",
       altura: "35 cm",
       profundidade: "50 cm",
-      imgSrc: "/assets/nicho1.png" // <-- CORRIGIDO
+      imgSrc: "/assets/nicho01.png" // <-- CORRIGIDO
     },
     {
       numero: "02",
@@ -76,7 +76,7 @@ export const nichosData = {
       largura: "60 cm",
       altura: "70 cm",
       profundidade: "50 cm",
-      imgSrc: "/assets/nicho2.png" // <-- CORRIGIDO
+      imgSrc: "/assets/nicho02.png" // <-- CORRIGIDO
     },
     {
       numero: "03",
@@ -84,7 +84,7 @@ export const nichosData = {
       largura: "60 cm",
       altura: "90 cm",
       profundidade: "50 cm",
-      imgSrc: "/assets/nicho3.png" // <-- CORRIGIDO
+      imgSrc: "/assets/nicho03.png" // <-- CORRIGIDO
     },
     {
       numero: "04",
@@ -92,7 +92,7 @@ export const nichosData = {
       largura: "60 cm",
       altura: "130 cm",
       profundidade: "50 cm",
-      imgSrc: "/assets/nicho4.png" // <-- CORRIGIDO
+      imgSrc: "/assets/nicho04.png" // <-- CORRIGIDO
     },
     {
       numero: "05",
@@ -100,7 +100,7 @@ export const nichosData = {
       largura: "125 cm",
       altura: "90 cm",
       profundidade: "50 cm",
-      imgSrc: "/assets/nicho5.png" // <-- CORRIGIDO
+      imgSrc: "/assets/nicho05.png" // <-- CORRIGIDO
     }
   ],
   rentalInfo: {
