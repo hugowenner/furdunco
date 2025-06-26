@@ -172,21 +172,21 @@ export default function InscricaoPage() {
 
                   {/* E-mail */}
                   <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">E-mail *</label>
+                    <label htmlFor="email" className="block text-gray-700 text-lg font-bold mb-2">E-mail *</label>
                     <input type="email" name="email" id="email" placeholder="Seu e-mail" value={formData.email} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.email ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.email && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.email}</p>}
                   </div>
 
                   {/* Nome */}
                   <div className="mb-4">
-                    <label htmlFor="nome" className="block text-gray-700 text-sm font-bold mb-2">Seu nome *</label>
+                    <label htmlFor="nome" className="block text-gray-700 text-lg font-bold mb-2">Seu nome *</label>
                     <input type="text" name="nome" id="nome" placeholder="Sua resposta" value={formData.nome} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.nome ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.nome && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.nome}</p>}
                   </div>
 
                   {/* Faixa Etária */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Faixa Etária *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Faixa Etária *</label>
                     {['18 a 24', '25 a 34', '35 a 44', '45 a 54', '55+'].map(age => (
                       <div key={age} className="mb-2">
                         <label className="inline-flex items-center">
@@ -208,35 +208,35 @@ export default function InscricaoPage() {
 
                   {/* Telefone de contato */}
                   <div className="mb-4">
-                    <label htmlFor="telefone" className="block text-gray-700 text-sm font-bold mb-2">Telefone de contato (atenção pois a comunicação será feita pelo whatsapp) *</label>
+                    <label htmlFor="telefone" className="block text-gray-700 text-lg font-bold mb-2">Telefone de contato (atenção pois a comunicação será feita pelo whatsapp) *</label>
                     <input type="tel" name="telefone" id="telefone" placeholder="Sua resposta" value={formData.telefone} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.telefone ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.telefone && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.telefone}</p>}
                   </div>
 
                   {/* Nome da sua Marca */}
                   <div className="mb-4">
-                    <label htmlFor="nome_marca" className="block text-gray-700 text-sm font-bold mb-2">Nome da sua Marca *</label>
+                    <label htmlFor="nome_marca" className="block text-gray-700 text-lg font-bold mb-2">Nome da sua Marca *</label>
                     <input type="text" name="nome_marca" id="nome_marca" placeholder="Sua resposta" value={formData.nome_marca} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.nome_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.nome_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.nome_marca}</p>}
                   </div>
 
                   {/* Instagram da sua marca */}
                   <div className="mb-4">
-                    <label htmlFor="instagram_marca" className="block text-gray-700 text-sm font-bold mb-2">Instagram da sua marca (digite o link) *</label>
+                    <label htmlFor="instagram_marca" className="block text-gray-700 text-lg font-bold mb-2">Instagram da sua marca (digite o link) *</label>
                     <input type="url" name="instagram_marca" id="instagram_marca" placeholder="Sua resposta" value={formData.instagram_marca} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.instagram_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.instagram_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.instagram_marca}</p>}
                   </div>
 
                   {/* Descrição da marca e principais produtos */}
                   <div className="mb-4">
-                    <label htmlFor="descricao_marca" className="block text-gray-700 text-sm font-bold mb-2">Descrição da marca e principais produtos *</label>
+                    <label htmlFor="descricao_marca" className="block text-gray-700 text-lg font-bold mb-2">Descrição da marca e principais produtos *</label>
                     <textarea name="descricao_marca" id="descricao_marca" placeholder="Sua resposta" value={formData.descricao_marca} onChange={handleChange} required rows="4" className={`w-full p-3 rounded-md border ${errosCampos.descricao_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.descricao_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.descricao_marca}</p>}
                   </div>
 
                   {/* Você produz em BH? */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Você produz em BH? *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Você produz em BH? *</label>
                     {['Sim', 'Não'].map(option => (
                       <div key={option} className="mb-2">
                         <label className="inline-flex items-center">
@@ -258,7 +258,7 @@ export default function InscricaoPage() {
 
                   {/* Qual o preço médio dos seus produtos? */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Qual o preço médio dos seus produtos? se tiver particularidades escrever na aba "outros". *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Qual o preço médio dos seus produtos? se tiver particularidades escrever na aba "outros". *</label>
                     {['menos de R$30,00', 'de R$30,00 a R$60', 'de R$60,00 R$100,00', 'de R$100,00 a R$150,00', 'mais de R$150,00', 'Outro:'].map(price => (
                       <div key={price} className="mb-2">
                         <label className="inline-flex items-center">
@@ -291,7 +291,7 @@ export default function InscricaoPage() {
 
                   {/* Se não é de BH, consegue trazer seus produtos para a cidade com qual frequência? */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Se não é de BH, consegue trazer seus produtos para a cidade com qual frequência? *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Se não é de BH, consegue trazer seus produtos para a cidade com qual frequência? *</label>
                     {['Sou de BH', 'Semanal', 'Mensal', 'Outro:'].map(freq => (
                       <div key={freq} className="mb-2">
                         <label className="inline-flex items-center">
@@ -324,7 +324,7 @@ export default function InscricaoPage() {
 
                   {/* Quais caixinhas te interessam? */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Quais caixinhas te interessam? (pode marcar mais de uma e sua chance de conseguir uma vaga é maior - digite a ordem de preferência na opção "outros") *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Quais caixinhas te interessam? (pode marcar mais de uma e sua chance de conseguir uma vaga é maior - digite a ordem de preferência na opção "outros") *</label>
                     {['1', '2', '3', '4', '5', 'Outro'].map(box => (
                       <div key={box} className="mb-2">
                         <label className="inline-flex items-center">
@@ -356,7 +356,7 @@ export default function InscricaoPage() {
 
                   {/* Qual é o segmento da sua marca? */}
                   <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Qual é o segmento da sua marca? *</label>
+                    <label className="block text-gray-700 text-lg font-bold mb-2">Qual é o segmento da sua marca? *</label>
                     {['Roupas', 'Acessórios - Joias, semi joias, bijuterias', 'Sapatos', 'Bolsas', 'Cama e mesa - Bordados, mantas, mesa posta', 'Cosméticos', 'Decoração', 'Pintura', 'Utilitários', 'Outro:'].map(segment => (
                       <div key={segment} className="mb-2">
                         <label className="inline-flex items-center">
@@ -389,7 +389,7 @@ export default function InscricaoPage() {
 
                   {/* Diga em poucas palavras porquê você quer vender com a gente no Furdunço? */}
                   <div className="mb-8">
-                    <label htmlFor="porque_vender" className="block text-gray-700 text-sm font-bold mb-2">Diga em poucas palavras porquê você quer vender com a gente no Furdunço? *</label>
+                    <label htmlFor="porque_vender" className="block text-gray-700 text-lg font-bold mb-2">Diga em poucas palavras porquê você quer vender com a gente no Furdunço? *</label>
                     <textarea name="porque_vender" id="porque_vender" placeholder="Sua resposta" value={formData.porque_vender} onChange={handleChange} required rows="4" className={`w-full p-3 rounded-md border ${errosCampos.porque_vender ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.porque_vender && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.porque_vender}</p>}
                   </div>
