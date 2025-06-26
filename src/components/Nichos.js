@@ -13,7 +13,7 @@ export default function Nichos() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('/assets/furduncio.avif')` }}
       ></div>
-      <div className="absolute inset-0 bg-brown-800 opacity-60"></div>
+      <div className="absolute inset-0 bg-brown-800 opacity-90"></div>
 
       {/* Conteúdo principal da seção */}
       <div className="container mx-auto px-4 relative z-10">
