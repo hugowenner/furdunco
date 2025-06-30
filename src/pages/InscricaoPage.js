@@ -52,17 +52,20 @@ export default function InscricaoPage() {
 
     const dataToSend = {
       ...formData,
-      caixinhas_interesse: formData.caixinhas_interesse.includes('Outro') ? `${formData.caixinhas_interesse.filter(c => c !== 'Outro').join(', ')}${formData.caixinhas_interesse.length > 1 ? ', ' : ''}${formData.caixinhas_interesse_outro}` : formData.caixinhas_interesse.join(', '),
+      // Lógica para combinar campos "Outro" com os principais
+      caixinhas_interesse: formData.caixinhas_interesse.includes('Outro') 
+        ? `${formData.caixinhas_interesse.filter(c => c !== 'Outro').join(', ')}${formData.caixinhas_interesse.length > 1 ? ', ' : ''}${formData.caixinhas_interesse_outro}` 
+        : formData.caixinhas_interesse.join(', '),
       preco_medio: formData.preco_medio === 'Outro:' ? formData.preco_medio_outro : formData.preco_medio,
       frequencia_entrega: formData.frequencia_entrega === 'Outro:' ? formData.frequencia_entrega_outro : formData.frequencia_entrega,
       segmento_marca: formData.segmento_marca === 'Outro:' ? formData.segmento_marca_outro : formData.segmento_marca,
     };
 
+    // Remove os campos auxiliares que não serão enviados para o banco de dados
     delete dataToSend.preco_medio_outro;
     delete dataToSend.frequencia_entrega_outro;
     delete dataToSend.segmento_marca_outro;
     delete dataToSend.caixinhas_interesse_outro;
-
 
     try {
       const response = await fetch('http://localhost/furdunco-backend/processa-inscricao.php', {
@@ -75,6 +78,7 @@ export default function InscricaoPage() {
       if (result.status === 'sucesso') {
         setStatus('sucesso');
         setMensagem(result.mensagem);
+        // Limpa o formulário após o sucesso
         setFormData({
           nome: '', email: '', faixa_etaria: '', telefone: '', nome_marca: '', instagram_marca: '',
           descricao_marca: '', produz_em_bh: '', preco_medio: '', preco_medio_outro: '',
@@ -173,14 +177,14 @@ export default function InscricaoPage() {
                   {/* E-mail */}
                   <div className="mb-4">
                     <label htmlFor="email" className="block text-gray-700 text-lg font-bold mb-2">E-mail *</label>
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail" value={formData.email} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.email ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" value={formData.email} onChange={handleChange} required maxLength={255} className={`w-full p-3 rounded-md border ${errosCampos.email ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.email && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.email}</p>}
                   </div>
 
                   {/* Nome */}
                   <div className="mb-4">
                     <label htmlFor="nome" className="block text-gray-700 text-lg font-bold mb-2">Seu nome *</label>
-                    <input type="text" name="nome" id="nome" placeholder="Sua resposta" value={formData.nome} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.nome ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <input type="text" name="nome" id="nome" placeholder="Sua resposta" value={formData.nome} onChange={handleChange} required maxLength={150} className={`w-full p-3 rounded-md border ${errosCampos.nome ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.nome && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.nome}</p>}
                   </div>
 
@@ -209,28 +213,28 @@ export default function InscricaoPage() {
                   {/* Telefone de contato */}
                   <div className="mb-4">
                     <label htmlFor="telefone" className="block text-gray-700 text-lg font-bold mb-2">Telefone de contato (atenção pois a comunicação será feita pelo whatsapp) *</label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="Sua resposta" value={formData.telefone} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.telefone ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <input type="tel" name="telefone" id="telefone" placeholder="Sua resposta" value={formData.telefone} onChange={handleChange} required maxLength={11} className={`w-full p-3 rounded-md border ${errosCampos.telefone ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.telefone && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.telefone}</p>}
                   </div>
 
                   {/* Nome da sua Marca */}
                   <div className="mb-4">
                     <label htmlFor="nome_marca" className="block text-gray-700 text-lg font-bold mb-2">Nome da sua Marca *</label>
-                    <input type="text" name="nome_marca" id="nome_marca" placeholder="Sua resposta" value={formData.nome_marca} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.nome_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <input type="text" name="nome_marca" id="nome_marca" placeholder="Sua resposta" value={formData.nome_marca} onChange={handleChange} required maxLength={150} className={`w-full p-3 rounded-md border ${errosCampos.nome_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.nome_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.nome_marca}</p>}
                   </div>
 
                   {/* Instagram da sua marca */}
                   <div className="mb-4">
                     <label htmlFor="instagram_marca" className="block text-gray-700 text-lg font-bold mb-2">Instagram da sua marca (digite o link) *</label>
-                    <input type="url" name="instagram_marca" id="instagram_marca" placeholder="Sua resposta" value={formData.instagram_marca} onChange={handleChange} required className={`w-full p-3 rounded-md border ${errosCampos.instagram_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <input type="url" name="instagram_marca" id="instagram_marca" placeholder="Sua resposta" value={formData.instagram_marca} onChange={handleChange} required maxLength={500} className={`w-full p-3 rounded-md border ${errosCampos.instagram_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.instagram_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.instagram_marca}</p>}
                   </div>
 
                   {/* Descrição da marca e principais produtos */}
                   <div className="mb-4">
                     <label htmlFor="descricao_marca" className="block text-gray-700 text-lg font-bold mb-2">Descrição da marca e principais produtos *</label>
-                    <textarea name="descricao_marca" id="descricao_marca" placeholder="Sua resposta" value={formData.descricao_marca} onChange={handleChange} required rows="4" className={`w-full p-3 rounded-md border ${errosCampos.descricao_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <textarea name="descricao_marca" id="descricao_marca" placeholder="Sua resposta" value={formData.descricao_marca} onChange={handleChange} required rows="4" maxLength={1000} className={`w-full p-3 rounded-md border ${errosCampos.descricao_marca ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.descricao_marca && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.descricao_marca}</p>}
                   </div>
 
@@ -280,6 +284,7 @@ export default function InscricaoPage() {
                             placeholder="Especificar preço"
                             value={formData.preco_medio_outro}
                             onChange={handleChange}
+                            maxLength={100} // Limite para o campo "Outro"
                             className="ml-6 mt-1 p-2 rounded-md border border-brown-200 focus:ring-brown-500 focus:outline-none focus:ring-2 font-lora w-full sm:w-1/2"
                           />
                         )}
@@ -313,6 +318,7 @@ export default function InscricaoPage() {
                             placeholder="Especificar frequência"
                             value={formData.frequencia_entrega_outro}
                             onChange={handleChange}
+                            maxLength={100} // Limite para o campo "Outro"
                             className="ml-6 mt-1 p-2 rounded-md border border-brown-200 focus:ring-brown-500 focus:outline-none focus:ring-2 font-lora w-full sm:w-1/2"
                           />
                         )}
@@ -345,6 +351,7 @@ export default function InscricaoPage() {
                             placeholder="Ex: 6, 7, 8 (nesta ordem)"
                             value={formData.caixinhas_interesse_outro}
                             onChange={handleChange}
+                            maxLength={100} // Limite para o campo "Outro"
                             className="ml-6 mt-1 p-2 rounded-md border border-brown-200 focus:ring-brown-500 focus:outline-none focus:ring-2 font-lora w-full sm:w-1/2"
                           />
                         )}
@@ -378,6 +385,7 @@ export default function InscricaoPage() {
                             placeholder="Especificar segmento"
                             value={formData.segmento_marca_outro}
                             onChange={handleChange}
+                            maxLength={100} // Limite para o campo "Outro"
                             className="ml-6 mt-1 p-2 rounded-md border border-brown-200 focus:ring-brown-500 focus:outline-none focus:ring-2 font-lora w-full sm:w-1/2"
                           />
                         )}
@@ -390,7 +398,7 @@ export default function InscricaoPage() {
                   {/* Diga em poucas palavras porquê você quer vender com a gente no Furdunço? */}
                   <div className="mb-8">
                     <label htmlFor="porque_vender" className="block text-gray-700 text-lg font-bold mb-2">Diga em poucas palavras porquê você quer vender com a gente no Furdunço? *</label>
-                    <textarea name="porque_vender" id="porque_vender" placeholder="Sua resposta" value={formData.porque_vender} onChange={handleChange} required rows="4" className={`w-full p-3 rounded-md border ${errosCampos.porque_vender ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
+                    <textarea name="porque_vender" id="porque_vender" placeholder="Sua resposta" value={formData.porque_vender} onChange={handleChange} required rows="4" maxLength={1000} className={`w-full p-3 rounded-md border ${errosCampos.porque_vender ? 'border-red-500 focus:ring-red-500' : 'border-brown-200 focus:ring-brown-500'} focus:outline-none focus:ring-2 font-lora`} />
                     {errosCampos.porque_vender && <p className="text-red-500 text-sm mt-1 font-lora">{errosCampos.porque_vender}</p>}
                   </div>
 
@@ -398,14 +406,13 @@ export default function InscricaoPage() {
                     <button type="submit" disabled={status === 'enviando'} className="bg-brown-600 text-white font-bold py-3 px-10 rounded-md text-base hover:bg-brown-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center">
                       <Send className="w-5 h-5 mr-3" />
                       {status === 'enviando' ? 'Enviando...' : 'Enviar Inscrição'}
-
-                      {/* Mensagem geral de sucesso/erro - MOVIDA PARA AQUI */}
-                {mensagem && (
-                    <div className={`max-w-3xl mx-auto p-3 mt-8 rounded-md text-center font-bold ${status === 'sucesso' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                        {mensagem}
-                    </div>
-                )}
                     </button>
+                    {/* Mensagem geral de sucesso/erro - Movido para fora do botão para melhor layout */}
+                    {mensagem && (
+                        <div className={`max-w-3xl mx-auto p-3 mt-8 rounded-md text-center font-bold ${status === 'sucesso' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                            {mensagem}
+                        </div>
+                    )}
                   </div>
                 </form>
             </div>

@@ -7,15 +7,16 @@ import { heroData } from '../data';
 export default function Hero() {
   return (
     <section id="hero" className="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden">
-      
-      {/* Imagem de Fundo com margens laterais */}
+
+      {/* Imagem de Fundo SEM margens laterais */}
       <div
-        className="absolute inset-y-0 left-4 right-4 md:left-8 md:right-8 bg-cover bg-center rounded-2xl shadow-xl"
-        style={{ backgroundImage: `url('/assets/mercadonovo2.png')` }}
+        className="absolute inset-0 bg-cover bg-center shadow-xl"
+        style={{
+          backgroundImage: `url('/assets/mercadonovo03.png')`,}}
       ></div>
 
-      {/* Overlay de Cor, também com margens laterais para alinhar com a imagem */}
-      <div className="absolute inset-y-0 left-4 right-4 md:left-8 md:right-8 bg-brown-800 opacity-60 rounded-2xl"></div>
+      {/* Overlay de Cor SEM margens laterais */}
+      <div className="absolute inset-0 bg-brown-800 opacity-60"></div> {/* Changed: removed left/right margin classes and rounded-2xl */}
 
       {/* Conteúdo da Seção Hero (não precisa de alteração) */}
       <div className="container mx-auto px-4 text-center relative z-10">

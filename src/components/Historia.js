@@ -6,15 +6,15 @@ import { historiaData } from '../data';
 export default function Historia() {
   return (
     <section id="historia" className="py-20 relative overflow-hidden">
-      
-      {/* Imagem de Fundo com margens laterais */}
+
+      {/* Imagem de Fundo SEM margens laterais */}
       <div
-        className="absolute inset-y-0 left-4 right-4 md:left-8 md:right-8 bg-cover bg-center rounded-2xl shadow-xl"
+        className="absolute inset-0 bg-cover bg-center shadow-xl" // Changed: removed left/right margin classes and rounded-2xl
         style={{ backgroundImage: `url('/assets/furduncio.avif')` }}
       ></div>
 
-      {/* Overlay de Cor, também com margens laterais para alinhar com a imagem */}
-      <div className="absolute inset-y-0 left-4 right-4 md:left-8 md:right-8 bg-brown-800 opacity-50 rounded-2xl"></div>
+      {/* Overlay de Cor SEM margens laterais */}
+      <div className="absolute inset-0 bg-brown-800 opacity-50"></div> {/* Changed: removed left/right margin classes and rounded-2xl */}
 
       {/* Conteúdo principal com posicionamento relativo */}
       <div className="container mx-auto px-4 relative z-10">
@@ -30,4 +30,3 @@ export default function Historia() {
     </section>
   );
 }
-
